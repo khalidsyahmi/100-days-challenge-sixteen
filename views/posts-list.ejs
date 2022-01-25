@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('includes/head', { title: 'All Posts' }) %>
+    <link rel="stylesheet" href="/styles/posts.css" />
+  </head>
+
+  <body>
+    <%- include('includes/header') %>
+    <main id="all-posts">
+      <h1>All Posts</h1>
+
+      <% if(!postKey || postKey.length === 0) {%>
+
+        <p> No data is found!<br> How about you create some more</p>
+        <p><a href="/new-post" class="btn">Create new post!</a></p>
+        <% } else { %>
+
+          <ol>
+            <% for(const post of postKey) {%>  
+            <li <%- include('includes/post-item',{postCard:post}) %></li>
+          <% } %>
+          </ol>
+          
+        <% } %>
+          
+
+    </main>
+  </body>
+</html>

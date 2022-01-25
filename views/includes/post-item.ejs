@@ -1,0 +1,13 @@
+<article class="post-item">
+  <h2><%= postCard.title %></h2>
+  <p class="post-item-author">By <%= postCard.author.name %></p>
+  <p><%= postCard.summary %></p>
+  <div class="post-actions">
+    <!-- wrap btn in form to use action -->
+    <form action="/posts/<%= postCard._id %>/delete" method="POST">
+      <button class="btn btn-alt">Delete Post</button>
+    </form>
+    <a href="/posts/<%= postCard._id %>/edit">Edit Post</a>
+    <a class="btn" href="/posts/<%= postCard._id %>">View Post</a>
+  </div>
+</article>
